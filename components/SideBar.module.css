@@ -1,0 +1,10 @@
+.body{
+  background-color: white;
+  color: blue;
+}
+
+.channel__title{
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+}
