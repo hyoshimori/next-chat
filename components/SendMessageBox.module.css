@@ -22,10 +22,10 @@
   display: inline-block;
 }
 
-.no__hover{
+.message__button{
   background-color: transparent;
   border: none;
-  counter-reset: white;
+  color: white;
 }
 
 @media (max-width: 540px) {
