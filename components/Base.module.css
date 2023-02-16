@@ -12,3 +12,10 @@
     width: 70vw;
   }
 }
+
+@media (max-width: 540px) {
+  .body{
+    display: flex;
+    flex-direction: column;
+  }
+}

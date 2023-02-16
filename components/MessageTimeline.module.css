@@ -1,15 +1,28 @@
 .body{
-  background-color: yellow;
+  background-color: #2B2A30;
   width: 80vw;
-  height: 70vh;
+  height: 80vh;
+  color: white;
 }
 
 .message{
   padding: 20px;
 }
 
+.message__top{
+  padding: 20px;
+  background-color: #1A1D21;
+}
+
 @media (max-width: 720px) {
   .body {
     width: 70vw;
+  }
+}
+
+@media (max-width: 540px) {
+  .body{
+    height: 80vh;
+    width: 100vw;
   }
 }

@@ -1,9 +1,38 @@
 .body{
-  background-color:brown;
+  background-color: #1A1D21;
+  color: white;
   width: 100%;
-  height: 30vh;
+  height: 20vh;
 }
 
-.body__message{
-  padding: 20px;
+.body__send__message{
+  justify-self: center;
+  text-align: center;
+  padding-top: 90px;
+}
+
+.body__send__message__input{
+  outline: none;
+  background-color: inherit;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid 1px #686676;
+  width: 70%;
+  display: inline-block;
+}
+
+.no__hover{
+  background-color: transparent;
+  border: none;
+  counter-reset: white;
+}
+
+@media (max-width: 540px) {
+  .body{
+    height: 10vh;
+  }
+  .body__send__message{
+    padding-top: 25px;
+  }
 }
