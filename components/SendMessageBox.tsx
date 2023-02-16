@@ -4,7 +4,9 @@ import styles from "./SendMessageBox.module.css"
 const SendMessageBox = () => {
   return (
     <div className={styles.body}>
-      This is message box
+      <div className={styles.body__message}>
+        This is message box
+      </div>
     </div>
   )
 }

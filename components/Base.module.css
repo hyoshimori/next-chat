@@ -2,3 +2,13 @@
   display: flex;
   width: 100vw;
 }
+
+.body__messages{
+  width: 80vw;
+}
+
+@media (max-width: 720px) {
+  .body__messages {
+    width: 70vw;
+  }
+}
