@@ -4,9 +4,9 @@ import styles from "./SideBar.module.css"
 const Sidebar = () => {
   return (
     <div className={styles.body}>
-      <ul>
-        <div># Channel1</div>
-      </ul>
+      <div className={styles.channel}>
+        <span># Channel 1</span>
+      </div>
     </div>
   )
 }

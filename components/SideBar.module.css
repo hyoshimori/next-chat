@@ -5,8 +5,13 @@
   width: 30vw;
 }
 
-.channel__title{
-  display: flex;
-  align-items: center;
+.channel{
   padding: 20px;
+}
+
+@media (max-width: 540px) {
+  .body{
+    height: 10vh;
+    width: 100%;
+  }
 }
