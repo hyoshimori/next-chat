@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Krub:wght@300&family=Mulish:wght@200&family=Pacifico&family=Roboto&display=swap');
+
+/* html {
+  background-color: black;
+} */
+
 .body{
   display: flex;
   width: 100vw;
+  font-family: 'Roboto', sans-serif;
+  color: #D1D2D3;
 }
 
 .body__messages{
