@@ -9,8 +9,7 @@ const SendMessageBox = () => {
     <div className={styles.body}>
       <div>
         <div className={styles.body__send__message}>
-          {/* <span>This is message box</span> */}
-          <input className={styles.body__send__message__input}/>
+          <input className={styles.body__send__message__input} type="text"/>
           <button className={styles.message__button}>< SailingIcon/></button>
         </div>
       </div>

@@ -2,7 +2,6 @@
   background-color: #2B2A30;
   width: 80vw;
   height: 80vh;
-  color: white;
 }
 
 .message{
@@ -12,6 +11,7 @@
 .message__top{
   padding: 20px;
   background-color: #1A1D21;
+  box-shadow: 0 1px 0 0 #333333;
 }
 
 @media (max-width: 720px) {
