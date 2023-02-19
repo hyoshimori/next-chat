@@ -4,7 +4,8 @@ import styles from "./SideBar.module.css"
 import { useChannels } from '@/hooks/useChannels';
 
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
+import SailingIcon from '@mui/icons-material/Sailing';
+import Link from 'next/link';
 
 const Sidebar = () => {
 
@@ -21,7 +22,9 @@ const Sidebar = () => {
     <div className={styles.body}>
       <div className={styles.icon__and__channels}>
         <div className={styles.channel__icon__position}>
-          <ChatBubbleIcon className={styles.channel__icon}/>
+          <Link href='./' className={styles.channel__icon__link}>
+            <SailingIcon className={styles.channel__icon}/>
+          </Link>
         </div>
         <div className={styles.channel}>
           <div className={styles.channel__lines}>
@@ -30,13 +33,17 @@ const Sidebar = () => {
             </button>
             <span>Channels</span>
           </div>
-          <div style={{ display: isSwitchOn ? "block" : "none" }} className={styles.channel__names}>
+          <div style={{ display: isSwitchOn ? "inline-block" : "none" }} className={styles.channel__names}>
             {
               channels.map((channel) => {
                 return(
-                  <div key={channel.id} className={styles.mapped__channel__name}>
-                    <span>{channel.title}</span>
-                  </div>
+                  <>
+                    <Link href={`/channels/${channel.id}`} style={{ textDecoration: 'none' }}>
+                      <div key={channel.id}>
+                        <span className={styles.mapped__channel__name}>{channel.title}</span>
+                      </div>
+                    </Link>
+                  </>
                 )
               })
             }
