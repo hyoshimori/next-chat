@@ -1,22 +1,14 @@
 import React, { useEffect } from 'react'
 import styles from "./SideBar.module.css"
 
-import { useAxios } from '@/hooks/useAxios';
+import { useChannels } from '@/hooks/useChannels';
 
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 
 const Sidebar = () => {
-  const { axios } = useAxios();
 
-  useEffect(() => {
-    const fetch = async() => {
-      const data = await axios.get('/channels.json')
-      console.log("response is", data)
-    }
-
-    fetch();
-  }, [])
+  const { channels } = useChannels()
 
   return (
     <div className={styles.body}>
