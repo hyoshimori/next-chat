@@ -47,6 +47,12 @@
   height: 10vh;
 }
 
+.channel__lines__button{
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
 @media (max-width: 540px) {
   .body{
     height: 10vh;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./SideBar.module.css"
 
 import { useChannels } from '@/hooks/useChannels';
@@ -10,6 +10,13 @@ const Sidebar = () => {
 
   const { channels } = useChannels()
 
+  const [isSwitchOn, setSwitchOn] = useState(true);
+
+  const toggleSwitch = () => {
+    // Hide when the button is pusshed
+    setSwitchOn(!isSwitchOn);
+  };
+
   return (
     <div className={styles.body}>
       <div className={styles.icon__and__channels}>
@@ -18,11 +25,21 @@ const Sidebar = () => {
         </div>
         <div className={styles.channel}>
           <div className={styles.channel__lines}>
-            <ArrowDropDownIcon className={styles.channel__lines__icon}/>
+            <button className={styles.channel__lines__button} onClick={toggleSwitch}>
+              <ArrowDropDownIcon className={styles.channel__lines__icon}/>
+            </button>
             <span>Channels</span>
           </div>
-          <div className={styles.channel__names}>
-            <span># Channel 1</span>
+          <div style={{ display: isSwitchOn ? "block" : "none" }} className={styles.channel__names}>
+            {
+              channels.map((channel) => {
+                return(
+                  <div key={channel.id} className={styles.mapped__channel__name}>
+                    <span>{channel.title}</span>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
       </div>
