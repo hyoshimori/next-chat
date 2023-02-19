@@ -1,22 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./SideBar.module.css"
 
-import { useAxios } from '@/hooks/useAxios';
+import { useChannels } from '@/hooks/useChannels';
 
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 
 const Sidebar = () => {
-  const { axios } = useAxios();
 
-  useEffect(() => {
-    const fetch = async() => {
-      const data = await axios.get('/channels.json')
-      console.log("response is", data)
-    }
+  const { channels } = useChannels()
 
-    fetch();
-  }, [])
+  const [isSwitchOn, setSwitchOn] = useState(true);
+
+  const toggleSwitch = () => {
+    // Hide when the button is pusshed
+    setSwitchOn(!isSwitchOn);
+  };
 
   return (
     <div className={styles.body}>
@@ -26,11 +25,21 @@ const Sidebar = () => {
         </div>
         <div className={styles.channel}>
           <div className={styles.channel__lines}>
-            <ArrowDropDownIcon className={styles.channel__lines__icon}/>
+            <button className={styles.channel__lines__button} onClick={toggleSwitch}>
+              <ArrowDropDownIcon className={styles.channel__lines__icon}/>
+            </button>
             <span>Channels</span>
           </div>
-          <div className={styles.channel__names}>
-            <span># Channel 1</span>
+          <div style={{ display: isSwitchOn ? "block" : "none" }} className={styles.channel__names}>
+            {
+              channels.map((channel) => {
+                return(
+                  <div key={channel.id} className={styles.mapped__channel__name}>
+                    <span>{channel.title}</span>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
       </div>
