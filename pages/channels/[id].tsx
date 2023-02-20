@@ -6,9 +6,18 @@ import SendMessageBox from '@/components/SendMessageBox';
 import 'normalize.css'
 
 const Channel = () => {
+
+  const ms = [
+    {
+    id: "1",
+    body: "Hello World",
+    channelId: "1"
+  },
+]
+
   return (
     <div>
-      <MessageTimeline/>
+      <MessageTimeline messages={ms}/>
       <SendMessageBox/>
     </div>
   )
