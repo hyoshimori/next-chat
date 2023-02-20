@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Krub:wght@300&family=Mulish:wght@200&family=Pacifico&family=Roboto&display=swap');
+
 .body{
   display: flex;
+  font-family: 'Roboto', sans-serif;
+  color: #D1D2D3;
 }
-
 
 @media (max-width: 720px) {
   .body__messages {
