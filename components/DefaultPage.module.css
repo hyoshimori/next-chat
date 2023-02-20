@@ -10,13 +10,7 @@
   max-height: 69vh;
   height: 69vh;
   padding: 60px;
-  box-shadow: -1px -1px 0 0 #333333;}
-
-.message__top{
-  padding: 20px;
-  background-color: #1A1D21;
-  box-shadow: 0 1px 0 0 #333333, -1px 0 0 0 #333333, -1px -1px 0 0 #333333;
-  color: #F8F8F6;
+  box-shadow: -1px -1px 0 0 #333333;
 }
 
 .app__explination__top{
@@ -56,7 +50,6 @@
 
 @media (max-width: 540px) {
   .body{
-    height: 90vh;
     width: 100vw;
   }
 

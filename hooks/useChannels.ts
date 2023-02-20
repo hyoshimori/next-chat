@@ -11,7 +11,6 @@ export const useChannels = () => {
       const data = await axios.get('/channels.json')
       setChannels(data.data)
     }
-
     fetch();
   }, [])
 
