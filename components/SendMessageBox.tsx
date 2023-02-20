@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./SendMessageBox.module.css"
-import SailingIcon from '@mui/icons-material/Sailing';
+import SendIcon from '@mui/icons-material/Send';
 
 import { Button, Input } from "@mui/material";
 
@@ -10,7 +10,7 @@ const SendMessageBox = () => {
       <div>
         <div className={styles.body__send__message}>
           <input className={styles.body__send__message__input} type="text"/>
-          <button className={styles.message__button}>< SailingIcon/></button>
+          <button className={styles.message__button}>< SendIcon/></button>
         </div>
       </div>
     </div>
