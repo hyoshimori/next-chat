@@ -5,6 +5,8 @@ import { useChannels } from '@/hooks/useChannels';
 
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import SailingIcon from '@mui/icons-material/Sailing';
+import SendIcon from '@mui/icons-material/Send';
+
 import Link from 'next/link';
 
 const Sidebar = () => {
@@ -22,7 +24,7 @@ const Sidebar = () => {
     <div className={styles.body}>
       <div className={styles.icon__and__channels}>
         <div className={styles.channel__icon__position}>
-          <Link href='./' className={styles.channel__icon__link}>
+          <Link href='/' className={styles.channel__icon__link}>
             <SailingIcon className={styles.channel__icon}/>
           </Link>
         </div>

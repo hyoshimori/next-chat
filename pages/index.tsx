@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
-import Base from '@/components/Base'
+import Base from 'Base'
 import 'normalize.css'
 
 const inter = Inter({ subsets: ['latin'] })
