@@ -1,0 +1,66 @@
+.body{
+  width: 80vw;
+  height: 100vh;
+  background-color: #cdcdcd;
+  color: black;
+}
+
+.message__bottom{
+  overflow-y: scroll;
+  max-height: 69vh;
+  height: 69vh;
+  padding: 60px;
+  box-shadow: -1px -1px 0 0 #333333;}
+
+.message__top{
+  padding: 20px;
+  background-color: #1A1D21;
+  box-shadow: 0 1px 0 0 #333333, -1px 0 0 0 #333333, -1px -1px 0 0 #333333;
+  color: #F8F8F6;
+}
+
+.app__explination__top{
+  display: flex;
+  align-items: center;
+  justify-content:left;
+}
+
+.bot__icon{
+  color: white;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  border: solid 1px transparent;
+  background-color: #1A1D21;
+  border-radius: 5px;
+}
+
+.message__bottom__from__bot{
+  margin-left: 60px;
+}
+
+.message__bottom__from__bot__list{
+  list-style-type: none;
+}
+
+.message__bottom__from__bot__contact__mail{
+  text-decoration: none;
+  color: #1D9BD1;
+}
+
+@media (max-width: 720px) {
+  .body {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 540px) {
+  .body{
+    height: 90vh;
+    width: 100vw;
+  }
+
+  .message__bottom{
+    height: 60vh;
+  }
+}
