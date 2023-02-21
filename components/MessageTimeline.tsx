@@ -6,6 +6,12 @@ import Message from './Message';
 
 import * as MessageType from  "@/types/Message"
 
+// ********** NOTE ********** //
+// MessageType (this can be called however we want to) is a namespace object that is created when importing the Message module using import * as MessageType.
+// Message is a type that is exported from the Message module and accessed through the MessageType namespace object.
+//Putting it all together, MessageType.Message[] is a type that represents an array of objects with the shape defined by the Message type that is a member of the MessageType namespace object.
+// ********** NOTE ********** //
+
 type Props = {
   messages: MessageType.Message[];
 }
