@@ -2,18 +2,28 @@ import React from 'react'
 import styles from "./SendMessageBox.module.css"
 import SendIcon from '@mui/icons-material/Send';
 import { useState } from "react";
+import { useMessages } from "@/hooks/useMessages";
 
-import { Button, Input } from "@mui/material";
+// import { Button, Input } from "@mui/material";
 
 const SendMessageBox = () => {
   const [message, setMessage] = useState<string | undefined>();
+  const { postMessage } = useMessages();
 
   const onClickSend = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const requestMessage = {
+      id: "test",
+      body: "message",
+      channelId: "1"
+    }
+
+    postMessage(requestMessage)
     setMessage('');
   }
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
+      // postMessage(message)
       setMessage('');
     }
   };
