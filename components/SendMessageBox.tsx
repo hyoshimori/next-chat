@@ -12,7 +12,7 @@ const SendMessageBox = () => {
 
   const onClickSend = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const requestMessage = {
-      id: "test",
+      id: "testing",
       body: "message",
       channelId: "1"
     }
