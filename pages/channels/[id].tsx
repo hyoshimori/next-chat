@@ -3,20 +3,15 @@ import MessageTimeline from "@/components/MessageTimeline";
 import SendMessageBox from '@/components/SendMessageBox';
 // import { useRouter } from 'next/router';
 
-import { useMessages } from '@/hooks/useMessages'; {}
+import { useMessages } from '@/hooks/useMessages';
 
 import 'normalize.css'
+import { useRouter } from 'next/router';
 
 const Channel = () => {
 
-//   const ms = [
-//     {
-//     id: "1",
-//     body: "Hello World",
-//     channelId: "1"
-//   },
-// ]
-
+  // Might need this when adding other channels
+  // const { query } = useRouter();
   const { messages, fetchMessages } = useMessages();
 
   useEffect(() => {

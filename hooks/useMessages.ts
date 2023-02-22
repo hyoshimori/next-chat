@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAxios } from "./useAxios"
 import * as MessageType from "@/types/Message"
+import useInterval from "./useInterval";
 
 export const useMessages = () => {
   const { axios } = useAxios();
@@ -15,6 +16,23 @@ export const useMessages = () => {
     const data = Object.values(response.data).filter((el) => el)
     setMessages(data)
   };
+
+  useInterval(() => {
+    fetchMessages();
+  }, 100000)
+
+
+  // Add WebSocket
+
+  // useEffect(() => {
+  //   const socket = new WebSocket("ws://localhost:8080/messages");
+  //   socket.addEventListener("message", event => {
+  //     const newMessage = JSON.parse(event.data);
+  //     setMessages(prevMessages => [...prevMessages, newMessage]);
+  //   });
+  //   return () => socket.close();
+  // }, []);
+
 
   // Applying Type from Message.ts
   const postMessage = async (m: MessageType.Message) => {

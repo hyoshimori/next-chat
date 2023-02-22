@@ -13,7 +13,7 @@ const SendMessageBox = () => {
   const onClickSend = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const requestMessage = {
       id: "testing",
-      body: "message",
+      body: e.target.value,
       channelId: "1"
     }
 
@@ -24,6 +24,13 @@ const SendMessageBox = () => {
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       // postMessage(message)
+      const requestMessage = {
+        id: "testing",
+        body: e.target.value,
+        channelId: "1"
+      }
+
+      postMessage(requestMessage)
       setMessage('');
     }
   };
