@@ -19,14 +19,15 @@ export const useMessages = () => {
 
   useInterval(() => {
     fetchMessages();
-  }, 100000)
+  }, 10000)
 
 
   // Add WebSocket
 
   // useEffect(() => {
-  //   const socket = new WebSocket("ws://localhost:8080/messages");
+  //   const socket = new WebSocket("wss://next-chat-d1541-default-rtdb.europe-west1.firebasedatabase.app/.ws?v=5");
   //   socket.addEventListener("message", event => {
+  //     console.log('Received message:', event.data);
   //     const newMessage = JSON.parse(event.data);
   //     setMessages(prevMessages => [...prevMessages, newMessage]);
   //   });
