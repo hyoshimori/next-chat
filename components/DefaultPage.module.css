@@ -7,8 +7,8 @@
 
 .message__bottom{
   overflow-y: scroll;
-  max-height: 70vh;
-  height: 70vh;
+  max-height: 69vh;
+  height: 69vh;
   padding: 60px;
   box-shadow: -1px -1px 0 0 #333333;
 }
@@ -54,6 +54,7 @@
   }
 
   .message__bottom{
-    height: 60vh;
+    height: 80vh;
+    padding: 60px 20px 0 20px;
   }
 }
