@@ -6,51 +6,57 @@ import { useMessages } from "@/hooks/useMessages";
 
 // import { Button, Input } from "@mui/material";
 
+
 const SendMessageBox = () => {
-  const [message, setMessage] = useState<string | undefined>();
+  const [message, setMessage] = useState('');
   const { postMessage } = useMessages();
 
-  const createNewMessage = (text: string) => {
-    const newMessage = {
-      id: "Me",
-      body: text,
-      channelId: Date.now()
-    };
-    return newMessage;
+
+  // web socket
+  // const createNewMessage = (text: string) => {
+  //   const newMessage = {
+  //     id: "Me",
+  //     body: text,
+  //     channelId: Date.now()
+  //   };
+  //   return newMessage;
+  // };
+
+  const generateRandomString = () => {
+    const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let result = '';
+    for (let i = 0; i < 25; i++) {
+      result += letters.charAt(Math.floor(Math.random() * letters.length));
+    }
+    return result;
   };
 
   const onClickSend = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const date = new Date()
     const requestMessage = {
-      id: "testing",
-      body: e.target.value,
-      channelId: "1"
+      id: generateRandomString().toString(),
+      body: message,
+      channelId: "0",
+      createdAt: date.toString(),
     }
 
     postMessage(requestMessage)
     setMessage('');
   }
 
-  // const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-  //   if (e.key === "Enter") {
-  //     // postMessage(message)
-  //     const requestMessage = {
-  //       id: "testing",
-  //       body: e.target.value,
-  //       channelId: "1"
-  //     }
-
-  //     postMessage(requestMessage)
-  //     setMessage('');
-  //   }
-  // };
-
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      if (message) {
-        const newMessage = createNewMessage(message);
-        postMessage(newMessage);
-        setMessage('');
+      // postMessage(message)
+      const date = new Date()
+      const requestMessage = {
+        id: generateRandomString().toString(),
+        body: message,
+        channelId: "0",
+        createdAt: date.toString(),
       }
+
+      postMessage(requestMessage)
+      setMessage('');
     }
   };
 
@@ -58,20 +64,12 @@ const SendMessageBox = () => {
     <div className={styles.body}>
       <div>
         <div className={styles.body__send__message}>
-          <input
-            className={styles.body__send__message__input}
-            type="text"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            onKeyPress={handleKeyPress}
-          />
-          <button className={styles.message__button} onClick={onClickSend}>
-            <SendIcon />
-          </button>
+          <input className={styles.body__send__message__input} type="text" value={message} onChange={(e) => setMessage(e.target.value)} onKeyPress={handleKeyPress}/>
+          <button className={styles.message__button} onClick={onClickSend} value={message}>< SendIcon/></button>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default SendMessageBox

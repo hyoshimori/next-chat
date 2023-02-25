@@ -12,11 +12,11 @@ const Channel = () => {
 
   // Might need this when adding other channels
   // const { query } = useRouter();
-  const { messages, fetchMessages } = useMessages();
+  const { messages, fetchMessages, messagesCount } = useMessages();
 
   useEffect(() => {
     fetchMessages();
-  }, [])
+  }, [messagesCount]);
 
   return (
     <div>

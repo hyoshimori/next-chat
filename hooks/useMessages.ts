@@ -19,7 +19,9 @@ export const useMessages = () => {
 
   useInterval(() => {
     fetchMessages();
-  }, 10000)
+  }, 1000000000)
+
+  let messagesCount = messages.length;
 
 
   // Add WebSocket
@@ -54,5 +56,5 @@ export const useMessages = () => {
     })
   }
 
-  return { fetchMessages, messages, postMessage }
+  return { fetchMessages, messages, postMessage, messagesCount }
 }

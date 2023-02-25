@@ -24,15 +24,11 @@
 }
 
 .message__button{
-  background-color: #1D3354;
+  background-color: transparent;
   color: white;
-  margin: 0 20px;
-  width: 50px;
-  border-radius: 10px;
   padding-top: 5px;
   border: none;
   cursor: pointer;
-
 }
 
 .body__send__message__input[type="text"]{

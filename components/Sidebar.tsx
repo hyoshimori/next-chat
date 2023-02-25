@@ -5,8 +5,6 @@ import { useChannels } from '@/hooks/useChannels';
 
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import SailingIcon from '@mui/icons-material/Sailing';
-import SendIcon from '@mui/icons-material/Send';
-
 import Link from 'next/link';
 
 const Sidebar = () => {
@@ -18,6 +16,7 @@ const Sidebar = () => {
   const toggleSwitch = () => {
     // Hide when the button is pusshed
     setSwitchOn(!isSwitchOn);
+    console.log('rendering!')
   };
 
   return (
@@ -39,13 +38,13 @@ const Sidebar = () => {
             {
               channels.map((channel) => {
                 return(
-                  <>
+                  <div key={channel.id}>
                     <Link href={`/channels/${channel.id}`} style={{ textDecoration: 'none' }}>
-                      <div key={channel.id}>
+                      <div>
                         <span className={styles.mapped__channel__name}>{channel.title}</span>
                       </div>
                     </Link>
-                  </>
+                  </div>
                 )
               })
             }
