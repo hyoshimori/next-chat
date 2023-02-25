@@ -1,5 +1,5 @@
 .body{
-  background-color: #19171D;
+  background-color: grey;
   color: white;
   width: 100%;
   height: 20vh;
@@ -9,16 +9,13 @@
 .body__send__message{
   justify-self: center;
   text-align: center;
-  padding-top: 90px;
+  padding-top: 70px;
 }
 
 .body__send__message__input{
   outline: none;
   background-color: inherit;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: solid 1px #cdcdcd;
+  border-bottom: solid 1px black;
   width: 70%;
   display: inline-block;
 }
@@ -41,6 +38,6 @@
     height: 10vh;
   }
   .body__send__message{
-    padding-top: 25px;
+    padding-top: 20px;
   }
 }

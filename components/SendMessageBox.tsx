@@ -4,7 +4,7 @@ import SendIcon from '@mui/icons-material/Send';
 import { useState } from "react";
 import { useMessages } from "@/hooks/useMessages";
 
-// import { Button, Input } from "@mui/material";
+import { Input } from "@mui/material";
 
 
 const SendMessageBox = () => {
@@ -64,7 +64,7 @@ const SendMessageBox = () => {
     <div className={styles.body}>
       <div>
         <div className={styles.body__send__message}>
-          <input className={styles.body__send__message__input} type="text" value={message} onChange={(e) => setMessage(e.target.value)} onKeyPress={handleKeyPress}/>
+          <Input className={styles.body__send__message__input} type="text" value={message} onChange={(e) => setMessage(e.target.value)} onKeyPress={handleKeyPress}/>
           <button className={styles.message__button} onClick={onClickSend} value={message}>< SendIcon/></button>
         </div>
       </div>
