@@ -1,5 +1,5 @@
 .body{
-  background-color: #cdcdcd;
+  background-color: white;
   width: 80vw;
   height: 80vh;
   box-shadow: -1px 0 0 0 #333333;
@@ -7,7 +7,35 @@
 }
 
 .message{
-  padding: 60px;
+  padding: 50px 13%;
+  max-height: 52.7vh;
+  overflow-y: scroll;
+}
+
+.message__icon{
+  padding: 10px;
+  font-size: 35px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.one__message{
+  display: flex;
+  align-items: center;
+}
+
+.message__and__id{
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.message__and__id__and__createdat{
+  display: flex;
+  flex-direction: column;
+
+
 }
 
 @media (max-width: 720px) {
